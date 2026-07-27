@@ -3,112 +3,152 @@
 **Học viên:** Ngô Việt Anh  
 **Mã học viên:** 2A202601579  
 **Vai trò / bối cảnh:** AI Researcher, tập trung vào LLM  
-**Trạng thái:** Bản nháp trước hoạt động nhóm — cần cập nhật bằng trải nghiệm thật
+**Bài toán nhóm chọn:** Ưu tiên và điều phối task bị kẹt trước thời hạn
 
-> Reflection là phần phải phản ánh đúng điều tôi đã làm trong nhóm. Vì hiện chưa
-> có group artifact hoặc nhật ký thảo luận, tôi chỉ điền những hoạt động đã thực
-> sự hoàn thành và để rõ phần cần cập nhật sau buổi nhóm. Tôi không dùng nội dung
-> giả định để nhận là đóng góp đã xảy ra.
+> Reflection này được đối chiếu với bản `02-group-problem-statement`. Tôi dùng AI
+> để rà cấu trúc, phản biện metric và diễn đạt lại ghi chú; nội dung pitch,
+> challenge, quyết định và bài học cần phản ánh đúng điều tôi hiểu và chịu trách
+> nhiệm, không coi câu trả lời của AI là trải nghiệm thay cho mình.
 
 ## 1. Tôi đã tham gia vào phần nào?
 
 | Hoạt động | Tôi đã làm gì? | Kết quả / ảnh hưởng |
 |---|---|---|
-| Scan cá nhân | Scan 10 problems từ workflow của AI Researcher về evaluation, literature review, reproducibility, dataset, experiment tracking và GPU job | Có 3 candidate đủ actor, bottleneck, metric và boundary để pitch |
-| Pitch Problem Card | Đã chuẩn bị pitch 60–90 giây cho bài phân tích lỗi đầu ra LLM | Sẵn sàng trình bày; kết quả shortlist cần cập nhật sau buổi nhóm |
-| Challenge bài của bạn khác | Đã chuẩn bị tiêu chí hỏi về baseline, actor, process fix, failure cost và human boundary | Cần ghi lại câu hỏi thật đã đặt và bài nào thay đổi sau challenge |
-| Gom trùng / cluster | Chưa diễn ra / chưa có dữ liệu nhóm | Cần cập nhật cluster và đóng góp cụ thể của tôi |
-| Chọn candidate problem | Ưu tiên cá nhân là error analysis sau benchmark | Quyết định của nhóm chưa có; không được ghi thay bằng lựa chọn cá nhân |
-| Validation / research | Đã đề xuất kế hoạch đo time log 2 tuần, phỏng vấn 1–2 đồng nghiệp và pilot 100–200 mẫu | Chưa có kết quả kiểm chứng; cần cập nhật evidence thật |
-| Workflow nhóm | Đã có current/future workflow cá nhân cho 3 cards | Chưa biết workflow nào được nhóm dùng hoặc sửa |
-| Problem Statement | Đã làm rõ actor, workflow, bottleneck, metric, boundary cho Card #1 | Problem Statement v0/v1 của nhóm chưa có |
-| Rule / Workflow / Agent | Lập luận cá nhân chọn Workflow, dùng rule/script cho schema và sampling; không chọn Agent | Cần cập nhật lập luận và quyết định thật của nhóm |
-| Decision | Đề xuất cá nhân: **Not Yet** cho triển khai rộng, **Go** cho pilot offline có human review | Final decision của nhóm chưa có |
+| Scan cá nhân | Scan 10 vấn đề từ công việc AI Researcher, sau đó chọn ba bài về LLM error analysis, literature review và reproducibility | Có ba Problem Cards với actor, workflow, bottleneck, metric và boundary rõ để đem vào thảo luận |
+| Pitch Problem Card | Pitch bài phân tích lỗi output LLM sau benchmark: researcher phải đọc output dài, gán taxonomy thủ công và dễ bỏ sót lỗi | Nhóm có thêm candidate thuộc nhóm evaluation/review; bài không được chọn cuối nhưng giúp mở rộng góc nhìn về human review |
+| Challenge bài của bạn khác | Challenge bài “ưu tiên task trước thời hạn” ở hai điểm: Jira rule có đủ không, và AI có được tự đổi assignee không | Nhóm tách rõ Rule dùng để lọc task `<24h`, AI chỉ tóm tắt comment, PM giữ quyền phân công |
+| Gom trùng / cluster | Cùng nhóm phân biệt ba cluster: Task & Deadline, Báo cáo/tổng hợp thông tin, Giáo dục/trợ lý học thuật | Tránh gộp mọi pain thành một “AI assistant” quá rộng |
+| Chọn candidate problem | Đồng thuận chọn “Ưu tiên công việc trước thời hạn” sau khi so với bài gom deadline cá nhân | Candidate được chọn có actor, workflow, baseline và khả năng pilot rõ hơn |
+| Validation / research | Xem lại tín hiệu từ ba PM/Team Lead và đối chiếu Jira Automation với Jira Intelligence | Nhóm thu hẹp pain từ “không thấy task trễ” sang “PM tốn thời gian đọc comment để hiểu nguyên nhân bị kẹt” |
+| Workflow nhóm | Góp góc nhìn tách workflow thành Rule → LLM → human review, đồng thời yêu cầu fallback về đọc comment gốc | Future workflow không trao quyền điều phối nhân sự cho AI; PM vẫn kiểm tra và assign |
+| Problem Statement | Làm rõ AI intervention point và boundary: AI chen giữa bước phát hiện task kẹt và bước PM ra quyết định | Problem Statement v1 nói rõ AI chỉ tóm tắt, không đổi trạng thái hoặc assignee |
+| Rule / Workflow / Agent | Lập luận chọn Workflow thay vì Agent; Rule đủ cho lọc deadline nhưng không đủ để hiểu comment kỹ thuật | Nhóm chọn đúng mức tự chủ, giảm permission và rủi ro giao sai người |
+| Decision | Đồng thuận `Go với scope nhỏ`, thử trên 10 task trễ cũ trước khi tích hợp Jira/Trello | Có pilot, human review và đường rollback nếu tóm tắt không đáng tin cậy |
 
 ## 2. Bảng dùng AI
 
 | Phase | Tôi dùng AI để làm gì? | AI hữu ích ở đâu? | AI sai/hời hợt ở đâu? | Tôi sửa gì bằng nhận định của mình? |
 |---|---|---|---|---|
-| Scan | Mở rộng candidate theo bối cảnh AI Researcher về LLM | Gợi lại các pain quanh evaluation, paper triage và reproducibility | Một số gợi ý dễ thành “trợ lý nghiên cứu toàn năng”, không có actor/metric | Loại ý quá rộng, chỉ giữ workflow tôi có thể mô tả và kiểm chứng |
-| Problem Card | Phản biện actor, bottleneck, metric, boundary và format lại nội dung | Giúp phát hiện metric chỉ đo tốc độ mà thiếu chất lượng | Có xu hướng xem số ước lượng như baseline đã được xác nhận | Ghi rõ số liệu là giả định; bổ sung kappa, traceability và review lỗi nghiêm trọng |
-| Workflow | Chuyển mô tả thành current/future flow và chỉ ra intervention point | Làm rõ phần nào dùng rule, phần nào dùng LLM, phần nào người thật quyết định | Ban đầu có thể tự động hóa quá nhiều bước và làm mờ human boundary | Không cho AI tự ra quyết định khoa học, chạy command hay tiêu GPU |
-| Research | Chưa dùng để tìm nguồn bên ngoài trong phase cá nhân này | Chưa đánh giá | Chưa đánh giá | Khi research, tôi sẽ chỉ giữ nguồn đã mở và kiểm tra trực tiếp |
-| Problem Statement | Dùng để kiểm tra còn thiếu field nào | Giúp bổ sung failure condition và rollback | Không thể xác nhận pain hoặc baseline thay người trong workflow | Giữ kế hoạch interview/time log và không gọi giả định là evidence |
-| Rule / Workflow / Agent | So sánh độ tự chủ và rủi ro của ba mức | Làm rõ Workflow đủ cho flow tuyến tính, Agent không cần thiết | Có thể đề xuất Agent vì nghe mạnh hơn dù chưa có nhu cầu lập kế hoạch động | Chọn rule cho join/sampling, LLM suggestion cho ngữ nghĩa, human review cho quyết định |
-| Decision | Dùng AI làm checklist phản biện trước khi chốt | Nhắc kiểm tra exit criteria và fallback | AI không có quyền chốt Go/No-Go thay nhóm | Chỉ đề xuất pilot; quyết định cuối phải dựa vào evidence và đồng thuận nhóm |
+| Scan | Gợi ý thêm problem theo bối cảnh AI Researcher | Mở rộng pain quanh evaluation, paper review và reproducibility | Một số ý quá rộng kiểu trợ lý nghiên cứu toàn năng | Chỉ giữ problem có actor, workflow thật và cách đo |
+| Problem Card | Phản biện actor, bottleneck, metric và boundary | Giúp phát hiện metric chỉ đo tốc độ nhưng thiếu chất lượng | Có xu hướng xem thời gian ước lượng như baseline đã xác nhận | Ghi rõ giả định và yêu cầu đo lại bằng log/pilot |
+| Workflow | Chuyển ghi chú before/after thành cấu trúc và Mermaid | Làm rõ bước Rule, bước AI và human boundary | Dễ nhảy từ “tóm tắt” sang “tự tìm người và assign” | Bỏ quyền tự hành động; PM luôn xem tóm tắt và tự phân công |
+| Research | Gợi ý hướng tìm công cụ đang có | Giúp nhóm nhận ra Jira Automation và Jira Intelligence giải các phần khác nhau | Mô tả tính năng có thể lỗi thời hoặc nói quá nếu không mở nguồn | Chỉ dùng link chính thức và tự kiểm claim trước khi giữ |
+| Problem Statement | Kiểm tra sáu field và chỉ ra chỗ mơ hồ | Giúp tách “phát hiện task trễ” khỏi “đọc hiểu nguyên nhân kẹt” | Có thể viết solution vào field Problem quá sớm | Viết lại bottleneck theo workflow hiện tại, đưa AI xuống intervention point |
+| Rule / Workflow / Agent | So sánh mức tự chủ và failure cost | Làm rõ Agent không cần thiết khi flow cố định | AI thường đề xuất Agent vì nghe toàn diện hơn | Chọn Workflow; Rule lọc task, LLM tóm tắt, PM quyết định |
+| Decision | Dùng checklist để rà pilot, boundary và rollback | Giúp tránh quyết định Go chung chung | AI không có bằng chứng thực tế và không được chốt thay nhóm | Nhóm tự chọn `Go với scope nhỏ`, giới hạn pilot ở 10 task lịch sử |
 
-## 3. Reflection hiện tại
+## 3. Reflection câu hỏi mở
 
-Điều tôi học rõ nhất ở phase cá nhân là một bài toán “đúng chất LLM” chưa chắc
-cần một Agent. Trong Card #1, phần ghép dữ liệu, kiểm schema và lấy mẫu phù hợp
-với rule/script; LLM chỉ có lợi ở bước cần đọc ngữ nghĩa và đề xuất taxonomy.
-Quyết định khoa học vẫn phải do researcher thực hiện vì một nhãn nghe hợp lý
-nhưng sai có thể dẫn cả vòng ablation sang hướng khác.
+### Tôi học được gì khi nghe problems của các bạn khác?
 
-Tôi cũng nhận ra metric “giảm từ 3–4 giờ xuống dưới 90 phút” chưa đủ. Nếu chỉ
-tối ưu tốc độ, workflow có thể tạo automation bias hoặc bỏ sót lỗi hiếm nhưng
-nghiêm trọng. Vì vậy tôi bổ sung agreement trên gold subset, khả năng truy vết
-về `sample_id`, review 100% high-severity case và điều kiện rollback khi chất
-lượng nhãn dưới ngưỡng.
+Tôi học được rằng problem có impact tốt không nhất thiết phải nằm đúng chuyên
+môn LLM của mình. Candidate error analysis của tôi gần công việc cá nhân, nhưng
+bài ưu tiên task sát deadline có actor phổ biến hơn, workflow dễ quan sát và
+được hai trong ba PM/Team Lead xác nhận pain. Việc nghe các bài về deadline,
+báo cáo và giáo dục cũng giúp tôi thấy nhiều problem có cùng pattern “đọc nhiều
+ngữ cảnh rồi ra quyết định”, nhưng failure cost và human boundary rất khác nhau.
 
-Thay đổi quan điểm quan trọng của tôi là không coi AI là giải pháp đầu tiên.
-Một schema kết quả thống nhất, taxonomy versioned, rule-based sampling và UI
-gán nhãn có thể tạo phần lớn giá trị với rủi ro thấp. Chỉ khi baseline này vẫn
-không đạt lead-time mục tiêu thì mới có lý do kiểm thử LLM-assisted labeling.
+### Nhóm có lúc nào bị solution-first không?
 
-Phần khó nhất khi viết Problem Statement là phân biệt dữ kiện tôi đã quan sát
-với con số tôi chỉ đang nhớ hoặc ước lượng. Tôi đã giữ các con số để tạo
-hypothesis đo được, nhưng đánh dấu rõ chúng cần time log và phỏng vấn ngắn trước
-khi trở thành bằng chứng.
+Có. Cách gọi ban đầu “AI ưu tiên công việc” dễ dẫn tới ý tưởng Agent tự quét
+task, kiểm tra lịch và đổi assignee. Sau khi vẽ workflow và xem phản hồi rằng
+chỉ cần nhãn `Blocked` có thể giải một phần pain, nhóm nhận ra Rule đã đủ để
+phát hiện task sát hạn. Phần đáng dùng LLM chỉ là đọc và tóm tắt comment dài;
+quyết định phân người phải trả lại PM.
 
-Nếu làm lại phase cá nhân, tôi sẽ lấy hai experiment log thật trước khi xếp
-hạng Top 3. Tôi cũng sẽ tạo taxonomy v0 từ 20–30 mẫu thật trước khi đặt ngưỡng
-kappa, vì độ khó và phân bố lớp quyết định ngưỡng agreement nào là thực tế.
+### Tôi có thay đổi ý kiến sau khi bị challenge không?
 
-## 4. Phần tôi phải tự cập nhật sau hoạt động nhóm
+Ban đầu tôi ưu tiên bài phân tích lỗi output LLM vì có dữ liệu và metric phù hợp
+với chuyên môn. Sau khi so score và xem validation của nhóm, tôi đồng ý chọn bài
+ưu tiên task sát deadline vì scope pilot rõ hơn và có tín hiệu từ người dùng
+ngoài người đề xuất. Tôi cũng thay đổi cách nhìn từ “AI giúp ưu tiên task” sang
+“Rule phát hiện task cần chú ý, AI tóm tắt nguyên nhân, PM tự ưu tiên và assign”.
 
-Để reflection trở thành bản nộp cuối và trung thực, tôi sẽ thay phần này bằng
-câu trả lời cụ thể ngay sau buổi thảo luận:
+### Tôi đóng góp gì thật sự vào artifact cuối?
 
-1. **Từ top 3 của các bạn, tôi học được:** `[ghi problem và insight cụ thể]`
-2. **Nhóm có bị solution-first không:** `[thời điểm, ai challenge, nhóm sửa gì]`
-3. **Tôi đổi ý sau challenge nào:** `[ý cũ → bằng chứng/câu hỏi → ý mới]`
-4. **Đóng góp của tôi vào artifact cuối:** `[workflow/metric/boundary/research]`
-5. **Điểm khó nhất của Problem Statement nhóm:** `[mô tả cụ thể]`
-6. **Nếu làm lại, tôi sẽ challenge mạnh hơn:** `[điểm và lý do]`
+Đóng góp rõ nhất của tôi là góc nhìn đánh giá LLM: không xem một bản tóm tắt
+trôi chảy là mặc nhiên đúng, luôn cần input gốc, human review và fallback. Góc
+nhìn đó được phản ánh trong future workflow, boundary không cho AI đổi assignee
+và cơ chế PM mở comment gốc khi tóm tắt vô lý. Tôi cũng giúp lập luận vì sao
+Workflow phù hợp hơn Agent.
+
+### Điều khó nhất khi viết Problem Statement là gì?
+
+Khó nhất là xác định đúng bottleneck. Nếu viết “PM không biết task nào trễ”, một
+filter deadline hoặc nhãn `Blocked` đã giải được phần lớn và AI không cần thiết.
+Sau validation, nhóm sửa bottleneck thành “PM mất thời gian đọc nhiều comment
+kỹ thuật để hiểu vì sao task bị kẹt”. Cách viết mới chỉ ra đúng intervention
+point của LLM và giữ quyết định nhân sự ngoài phạm vi AI.
+
+Một khó khăn khác là metric hiện chủ yếu đo thời gian `60 → 15 phút`. Metric này
+chưa đủ bảo vệ chất lượng: tóm tắt nhanh nhưng bỏ mất blocker hoặc bịa nguyên
+nhân vẫn có thể làm PM assign sai. Nếu phát triển tiếp, tôi sẽ thêm guardrail:
+không bịa blocker/owner và giữ đủ các chi tiết quan trọng do PM đánh dấu trên
+bộ 10 task pilot.
+
+### Nếu làm lại, tôi sẽ challenge nhóm mạnh hơn ở điểm nào?
+
+Tôi sẽ challenge mạnh hơn về quality metric và exit criterion. Điều kiện
+rollback “AI sai ở 70% task” quá lỏng đối với một workflow ảnh hưởng tới phân
+công nhân sự; ngay cả tỷ lệ sai thấp hơn cũng có thể gây hại nếu lỗi rơi đúng
+task critical. Tôi sẽ yêu cầu nhóm định nghĩa “tóm tắt đúng và đủ”, gán nhãn
+gold cho 10 task lịch sử, đo tỷ lệ bỏ sót blocker, tỷ lệ bịa chi tiết và thời
+gian PM phải đọc lại comment trước khi quyết định mở rộng.
+
+## 4. Bài học chính
+
+- Bắt đầu từ actor và bottleneck giúp tách phần Rule đủ dùng khỏi phần thực sự
+  cần hiểu ngôn ngữ.
+- Validation có thể làm đổi problem: pain không nằm ở việc thấy task trễ mà ở
+  việc hiểu nhanh nguyên nhân kẹt.
+- Một Workflow tốt không nhất thiết giảm số bước; nó giảm effort ở đúng bước
+  nghẽn và giữ điểm kiểm soát của con người.
+- Human-in-the-loop không chỉ là “có người xem”. Người review phải có dữ liệu
+  gốc, quyền override và trách nhiệm với quyết định cuối.
+- Agent không phải mức trưởng thành mặc định. Khi đường đi cố định và hành động
+  có failure cost cao, Workflow hẹp dễ audit phù hợp hơn.
+
+Nếu làm lại:
+
+> Tôi sẽ yêu cầu baseline chất lượng song song với baseline thời gian ngay từ
+> đầu, đồng thời thử Rule-only trước. Chỉ khi Rule lọc task vẫn để lại bottleneck
+> đọc comment đáng kể và LLM đạt yêu cầu fidelity trên dữ liệu lịch sử, tôi mới
+> đề xuất tích hợp workflow vào công cụ quản lý dự án.
 
 ## 5. Kiểm tra hiểu bài cá nhân
 
 **Problem → Workflow:**  
-Không thể biết AI nên nằm ở đâu nếu chưa mô tả ai đang làm gì và bước nào
-nghẽn. Với Card #1, pain không phải “chưa có AI agent” mà là 120 phút đọc và
-gán taxonomy trong workflow error analysis.
+PM/Team Lead gần deadline phải rà Kanban, mở từng task, đọc nhiều comment, hỏi
+người rảnh rồi assign hỗ trợ. Bước đọc comment khoảng 40/60 phút là bottleneck.
 
 **Workflow → Metric:**  
-Metric phải đo bottleneck và guardrail. Lead time đo tốc độ; kappa, traceability
-và recall lỗi nghiêm trọng đo chất lượng.
+Target chính là giảm thời gian rà soát và điều phối từ 60 xuống 15 phút. Cần bổ
+sung metric chất lượng về blocker bị bỏ sót, chi tiết bị bịa và effort đọc lại.
 
 **Metric → Boundary:**  
-Vì lỗi nhãn có thể làm sai quyết định nghiên cứu, LLM chỉ đề xuất nhãn/evidence.
-Researcher review trường hợp rủi ro và quyết định insight/experiment tiếp theo.
+Vì một tóm tắt sai có thể dẫn đến giao sai người, AI chỉ tóm tắt. PM được xem
+comment gốc và giữ toàn quyền đổi trạng thái/assignee.
 
 **Boundary → độ phù hợp với AI:**  
-Rule/script đủ cho dữ liệu có cấu trúc. LLM phù hợp với đọc ngữ nghĩa trong một
-workflow xác định. Agent không phù hợp vì chưa cần tự lập kế hoạch, tự dùng tool
-hay tự hành động.
+Rule phù hợp với deadline có cấu trúc. LLM phù hợp với tóm tắt comment kỹ thuật.
+Workflow đủ vì thứ tự bước cố định; Agent không cần thiết và có failure surface
+lớn hơn.
 
 **Decision:**  
-Hiện tại chọn **Go cho pilot offline, Not Yet cho triển khai rộng**. Chỉ mở rộng
-khi đo được giảm lead time, đạt chất lượng nhãn và không bỏ sót lỗi nghiêm trọng;
-nếu không, rollback về schema + rule + human labeling.
+`Go với scope nhỏ`: thử thủ công trên 10 task trễ lịch sử, đo thời gian và chất
+lượng rồi mới cân nhắc tích hợp Jira/Trello. Nếu summary sai hoặc không tạo lợi
+ích so với Rule + đọc tay, rollback về workflow cũ.
 
 ## 6. Tự kiểm cuối bài
 
-- [x] Có 10 problems và Top 3 Problem Cards trong phần scan cá nhân.
-- [ ] Đã pitch thật và ghi kết quả/challenge của nhóm.
-- [ ] Đã cập nhật nhật ký hội tụ và candidate problem nhóm.
-- [ ] Đã ghi đóng góp thật của tôi vào workflow/Problem Statement nhóm.
-- [x] Đã giải thích cách dùng AI, điểm yếu và phần tôi tự sửa.
-- [x] Đã nêu điều học được ở phase cá nhân và nếu làm lại sẽ đổi gì.
-- [x] Tự giải thích được problem → workflow → metric → boundary → AI fit.
-- [ ] Đã thay toàn bộ placeholder ở Mục 4 bằng trải nghiệm thật sau buổi nhóm.
+- [x] [12đ cá nhân] Có 10 problems và Top 3 Problem Cards.
+- [x] [12đ cá nhân] Đã pitch problem cá nhân và challenge bài nhóm về Rule,
+  Agent và quyền đổi assignee.
+- [x] Nhóm đã hội tụ từ các cluster về một candidate.
+- [x] [15đ nhóm] Có workflow trước/sau, bottleneck và fallback.
+- [x] [20đ nhóm] Có Problem Statement v0/v1 với metric và boundary.
+- [x] [15đ nhóm] Có so sánh Rule / Workflow / Agent.
+- [x] [10đ nhóm] Có quyết định `Go với scope nhỏ`, pilot và rollback.
+- [x] [10đ cá nhân] Reflection nêu vai trò, cách dùng AI, bài học và điều sẽ đổi.
+- [x] [6đ cá nhân] Tự giải thích được problem → workflow → metric → boundary →
+  độ phù hợp với AI.
